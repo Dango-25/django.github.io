@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<html class="{% if site.dash.rtl %}direction--rtl{% else %}direction--ltr{% endif %}"lang="{{ page.lang | default: site.lang | default: "en" }}">
+<html lang="pt">
 
-  {%- include head.html -%}
+  {% include head.html %}
 
-  <body>
+    <body>
+      <div class="container">
 
-    {%- include header.html -%}
+        {% include header.html %}
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2">
+            <main>
+            {{ content }}
+            </main>
+          </div>
+        </div>
+
+        {% include footer.html %}
+
       </div>
-    </main>
-
-    {%- include footer.html -%}
-    <script>
-      window.FontAwesomeConfig = {
-        searchPseudoElements: true
-      }
-    </script>
-  </body>
-
+    </body>
 </html>
